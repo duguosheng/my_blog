@@ -105,6 +105,7 @@ num2 = 20
 num3 = 10.5
 print("the number is %d , %d and %f" % (num1,num2,num3))    #实际上这是元组的应用
 ```
+> %d是以十进制输出，可用%x以十六进制输出
 
 * 使print不换行
 ```python
