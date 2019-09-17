@@ -129,6 +129,7 @@ class Cat(Animal):
 喵喵喵
 ```
 
+
 ## 新式类和旧式类
 * 新式类：以`object` 为基类的类，推荐使用
 * 旧式类：不以`object` 为基类的类，不推荐使用
@@ -142,6 +143,25 @@ class 类名(object):
 ```
 
 
+## 构造函数的继承
+* 旧式类：父类名称.__init__(self,参数1，参数2，...)
+* 新式类：super(子类，self).__init__(参数1，参数2，....)
+
+
+```py
+class A(object):
+	def __init__(self, name):
+		self.name = name
+
+class B(A):
+	def __init__(self, name, age):
+        #调用父类初始化方法
+		super(B, self).__init__(name)
+		self.age = age
+
+bb = B("das", 17)
+print(bb.name)
+```
 
 
 

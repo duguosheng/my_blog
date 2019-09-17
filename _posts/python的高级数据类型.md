@@ -57,6 +57,54 @@ for temp_name in my_list:
     print("the name is %s" % temp_name)
 ```
 
+### 创建列表的方式
+* 基本语法
+```py
+my_list = [1, 2, "hello"]
+```
+
+* `list()`创建
+```py
+my_list1 = list("abcde")
+my_list2 = list(range(1, 10, 2))
+print(my_list1)
+print(my_list2)
+```
+
+> 结果
+```
+['a', 'b', 'c', 'd', 'e']
+[1, 3, 5, 7, 9]
+```
+
+> 利用`range()`可以快速创建整数列表，其格式为`range([start,] end [,step])`，它返回的是一个range对象
+>> `start`：起始数字，默认0
+>> `end`：结尾数字，必须指定
+>> `step`：步长，默认1
+
+* 推导式生成列表
+```py
+my_list3 = [x*2 for x in range(5)]
+my_list4 = [x**2 for x in range(50) if x%5==0]
+my_list5 = [(x, y) for x in range(5) for y in range(5) if x%2==0 if y%3==0]
+my_list6 = [a for a in "hello"]
+print(my_list3)
+print(my_list4)
+print(my_list5)
+print(my_list6)
+```
+
+> 结果
+```py
+[0, 2, 4, 6, 8]
+[0, 25, 100, 225, 400, 625, 900, 1225, 1600, 2025]
+[(0, 0), (0, 3), (2, 0), (2, 3), (4, 0), (4, 3)]
+['h', 'e', 'l', 'l', 'o']
+```
+
+
+
+
 ## 元组
 * 元组与列表相似，不同之处在于元组的元素**不能修改** 
 * 使用`()` 定义
@@ -99,7 +147,7 @@ my_tuple1 = tuple(my_list)      #使用tuple()将list转换成tuple
 my_list2 = list(my_tuple1)      #使用list()将tuple转换成list
 ```
 
-* 利用元组返回多个值
+* 利用元组返回多个值(同理也可使用列表，字典，集合)
 ```python
 def test():
     num = 1
@@ -114,6 +162,27 @@ temp1, temp2 = test() #多个变量接收返回值
 ```python
 a, b = (b, a)
 ```
+
+### 生成器推导式生成元组
+```py
+my_tp1 = (x*2 for x in range(5))
+my_tp2 = (x**2 for x in range(50) if x%5==0)
+# 打印生成器
+print(my_tp1)
+print(my_tp2)
+# 打印生成的元组，注意只能调用一次tuple()
+print(tuple(my_tp1))
+print(tuple(my_tp2))
+```
+
+> 结果
+```
+<generator object <genexpr> at 0x7fb5bd8cc850>
+<generator object <genexpr> at 0x7fb5bd8cc8d0>
+(0, 2, 4, 6, 8)
+(0, 25, 100, 225, 400, 625, 900, 1225, 1600, 2025)
+```
+
 
 ## 字典
 * 使用`{}`定义
@@ -171,6 +240,109 @@ card_list = [
 for info in card_list:
     print(info)
 ```
+
+### 创建字典的几种方式
+* 使用{}基本语法
+```py
+my_dict1 = {"name":"张三", "age":28}
+```
+
+* 使用`dict()`方法
+```py
+my_dict2 = dict(name="张三", age=18)
+my_dict3 = dict(("name", "张三"), ("age", 18))
+```
+
+* 使用`zip()`
+```py
+my_key = ["name", "age", "job"]
+my_value = ["张三", 18, "teacher"]
+my_dict4 = dict(zip(my_key, my_value))
+print(my_dict4)
+```
+
+> 运行结果
+```
+{'name': '张三', 'age': 18, 'job': 'teacher'}
+```
+
+* 通过`fromkeys`创建值为空的字典
+```py
+my_dict5 = dict.fromkeys(["name", "age", "job"])
+print(my_dict5)
+```
+
+> 结果
+```
+{'name': None, 'age': None, 'job': None}
+```
+
+* 字典推导式
+```py
+# 利用推导式统计字符出现次数
+my_text = "hello, world"
+my_dict6 = {my_char:my_text.count(my_char) for my_char in my_text}
+print(my_dict6)
+```
+
+> 结果
+```py
+{'h': 1, 'e': 1, 'l': 3, 'o': 2, ',': 1, ' ': 1, 'w': 1, 'r': 1, 'd': 1}
+```
+
+## 集合
+> 集合无序可变，**元素不能重复**，集合底层是字典实现，集合中的元素都是字典中的`键对象`，因此不可重复
+
+* 使用{}创建集合对象，并使用`add()`添加元素
+```py
+a = {"name", "age", 3, 5}
+a.add(9)
+```
+
+* 使用`set()`可以将列表，元组等可迭代对象转化为集合，如果数据重复，只保存一个
+```py
+a = ["a", "b", "c", "a"]
+b = set(a)
+print(b)
+```
+
+> 结果
+```py
+{'a', 'c', 'b'}
+```
+
+* `remove()`删除指定元素，`clear()`清空集合
+```py
+a.remove("a")
+a.clear()
+```
+
+* 集合相关操作
+```py
+a = {1, 2, 3}
+b = {2, "a", "c"}
+# 并集
+print(a|b)
+print(a.union(b))
+# 交集
+print(a&b)
+print(a.intersection(b))
+# 差集
+print(a-b)
+print(a.difference(b))
+```
+
+> 结果
+```py
+{1, 2, 3, 'a', 'c'}
+{1, 2, 3, 'a', 'c'}
+{2}
+{2}
+{1, 3}
+{1, 3}
+```
+
+
 
 ## 字符串
 ```python
