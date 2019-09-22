@@ -57,6 +57,38 @@ test2()
 2
 ```
 
+### 什么时候使用global
+* 当对全局变量的指向进行修改的时候，需要使用`global`修饰，如果指向没有改变，则不需要，如：
+```py
+num = 10
+num_list1 = [11, 22]
+num_list2 = [11, 22]
+
+
+def main():
+    global num
+    global num_list2
+    num = 20  # 改变指向，需要声明
+    num_list1.append(33)  # 不改变指向，不需声明
+    num_list2 += [33, 44]  # 执行+=必须要声明global，因为这也是需要改变指向的操作，如果未声明程序就会崩溃
+
+
+if __name__ == "__main__":
+    main()
+    print(num)
+    print(num_list1)
+    print(num_list2)
+```
+
+> 运行结果
+```py
+20
+[11, 22, 33]  # 使用append()方法没有改变指向，成功达到预期执行结果
+[11, 22, 33, 44]
+```
+
+
+
 ## 全局变量的命名
 
 * 可以在全局变量前加`g_` 或`gl_` 的前缀
