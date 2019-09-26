@@ -5,7 +5,7 @@ tags:
 - wordpress一些基础概念
 categories:
 - wordPress
-description:
+description: 文章和页面是wordpress的两个模块
 ---
 
 <!--more-->
