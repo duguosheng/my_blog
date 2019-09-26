@@ -4,7 +4,7 @@ date: 2019-09-26 10:54:55
 tags:
 - idea乱码
 categories:
-- ide
+- IDE
 description: 当Jetbrains菜单中包含中文描述(如安装插件时的描述信息)
 ---
 
