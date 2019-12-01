@@ -54,9 +54,9 @@ int fclose (FILE *__stream);
 > 在实际开发中，文本文件以行为单位存放字符串，如C程序的源代码，一段文字等，所以一般是按行写入或读取数据。
 
 ### 向文件中写入数据
-* 可使用`fputc`, `fputs`, `fprintf`写文件，一般使用`sprintf`
+* 可使用`fputc`, `fputs`, `fprintf`写文件，一般使用`fprintf`
 ```C
-int sprintf (FILE *__stream,const char *__format, ...);
+int fprintf (FILE *__stream,const char *__format, ...);
 ```
 
 > 与`printf`用法大致相同，只是第一个参数多了个`FILE`文件指针
