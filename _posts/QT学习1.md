@@ -2,7 +2,7 @@
 title: QT学习1
 date: 2019-12-01 16:56:47
 tags:
--QT
+- QT
 categories:
 - C/C++
 description:
