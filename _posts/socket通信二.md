@@ -4,7 +4,7 @@ date: 2019-11-14 18:56:20
 tags:
 - socket
 categories:
-- C++
+- C/C++
 description:
 - C在socket编程中需要注意的地方
 ---

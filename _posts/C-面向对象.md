@@ -4,7 +4,7 @@ date: 2019-11-09 11:19:47
 tags:
 - 面向对象
 categories:
-- C++
+- C/C++
 description:
 - C++是一门面向对象的语言
 ---

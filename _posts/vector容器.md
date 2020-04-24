@@ -4,7 +4,7 @@ date: 2019-11-09 19:46:52
 tags:
 - 容器
 categories:
-- C++
+- C/C++
 description:
 - vector容器是一个能够存放任意类型的动态数组
 ---

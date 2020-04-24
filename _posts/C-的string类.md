@@ -4,7 +4,7 @@ date: 2019-11-09 18:59:41
 tags:
 - string类
 categories:
-- C++
+- C/C++
 description:
 - 字符串
 ---

@@ -4,7 +4,7 @@ date: 2019-11-12 21:50:29
 tags:
 - 继承
 categories:
-- C++
+- C/C++
 description:
 - 通过继承父类来缩减重复的代码
 ---

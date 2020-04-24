@@ -4,7 +4,7 @@ date: 2019-11-08 23:45:04
 tags:
 - 重载
 categories:
-- C++
+- C/C++
 description:
 - 即同名而功能类似的函数
 ---

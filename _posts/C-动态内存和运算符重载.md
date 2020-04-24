@@ -5,7 +5,7 @@ tags:
 - 动态内存
 - 运算符重载
 categories:
-- C++
+- C/C++
 description:
 - 简单了解一下
 ---

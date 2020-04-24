@@ -51,7 +51,7 @@ test: test.c:5: Div: Assertion `b != 0' failed.
 `_Static_assert`接收两个参数，第一个参数是整型常量表达式，第二个参数是一个字符串，如果第一个表达式求值为假(0或`_False`)，编译器会显示字符串，且不通过编译
 
 * 示例
-```C
+```c
 #include <assert.h>
 #include <limits.h>
 #include <stdio.h>

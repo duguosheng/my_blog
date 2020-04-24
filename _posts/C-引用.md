@@ -4,7 +4,7 @@ date: 2019-11-09 14:22:47
 tags:
 - 引用
 categories:
-- C++
+- C/C++
 description:
 -  引用就是某一变量（目标）的一个别名
 ---
